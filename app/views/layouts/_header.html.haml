@@ -1,0 +1,13 @@
+.navbar.navbar-inner
+  .container
+    %ul.nav
+      %li
+        = link_to "Home", "#" #"home_index_path"
+      %li.divider-vertical
+      %li.dropdown#minecraft
+        = link_to raw("Minecraft <b class='caret'></b>"), '#', class: "dropdown-toggle", :'data-toggle' => "dropdown"
+        %ul.dropdown-menu{role:"menu",:'aria-labelledby'=>"dLabel"}
+          %li
+            = link_to "Server Joining Instructions", minecraft_path
+          %li
+            = link_to "Mods", mods_path
