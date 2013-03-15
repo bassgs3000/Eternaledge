@@ -1,6 +1,6 @@
 %center
-  %h1.shadow WELCOME!!
-  To install the mods necessary for the Minecraft Server.
+  %h2 Here are the instructions to join the server.
+  %hr
 %ol
   %li
     Grab and install the
@@ -12,14 +12,13 @@
   %li Login and run the game at least once. Making sure to have Big Dig Pack selected as the mod. Quit minecraft once it loads up.
   %li
     Download the
-    = succeed "," do
-      %a{:href => "/mod_AdvancedSolarPanels_3_3_3.zip"} Advanced Solar Panels Mod
-    = succeed "," do
-      %a{:href => "/mod_zGraviSuite_1_7.zip"} Gravisuit Mod
-    = succeed "," do
-      %a{:href => "/StevesCarts2.0.0.a62.zip"} Steves Carts 2
-    and
-    %a{:href => "/Transformers v1.7b.zip"} Transformer Mod
+    - @mods.each do |modfile|
+      - suffix = ", "
+      - if modfile == @mods.last
+        and
+        - suffix = ""
+      = link_to modfile.name.chomp, modfile.mod.url
+      = suffix
   %li
     On your desktop press the combination of the "
     %i> Windows Key
@@ -34,6 +33,3 @@
     %u.servername eternaledge.net
     %button.btn.btn-mini.serverbutton Copy
     to your serverlist and join us!
-
-- @mods.each do |mod|
-  = mod.name
