@@ -7,6 +7,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'paperclip'
+gem 'zclip-rails'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
