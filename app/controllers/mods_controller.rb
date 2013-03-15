@@ -1,6 +1,5 @@
 class ModsController < ApplicationController
-  # GET /mods
-  # GET /mods.json
+  before_filter :authenticate
   def index
     @mods = Mod.all
 
@@ -10,14 +9,10 @@ class ModsController < ApplicationController
     end
   end
 
-  # GET /mods/1
-  # GET /mods/1.json
   def show
     redirect_to mods_path
   end
 
-  # GET /mods/new
-  # GET /mods/new.json
   def new
     @mod = Mod.new
 
@@ -26,14 +21,11 @@ class ModsController < ApplicationController
       format.json { render json: @mod }
     end
   end
-
-  # GET /mods/1/edit
+  
   def edit
     @mod = Mod.find(params[:id])
   end
 
-  # POST /mods
-  # POST /mods.json
   def create
     @mod = Mod.new(params[:mod])
 
@@ -48,8 +40,6 @@ class ModsController < ApplicationController
     end
   end
 
-  # PUT /mods/1
-  # PUT /mods/1.json
   def update
     @mod = Mod.find(params[:id])
 
@@ -64,8 +54,6 @@ class ModsController < ApplicationController
     end
   end
 
-  # DELETE /mods/1
-  # DELETE /mods/1.json
   def destroy
     @mod = Mod.find(params[:id])
     @mod.destroy
@@ -73,6 +61,14 @@ class ModsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to mods_url }
       format.json { head :no_content }
+    end
+  end
+  
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "password"
     end
   end
 end
