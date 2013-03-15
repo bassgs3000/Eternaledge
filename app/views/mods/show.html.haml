@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @mod.name
+
+= link_to 'Edit', edit_mod_path(@mod)
+\|
+= link_to 'Back', mods_path

@@ -1,0 +1,12 @@
+%h1 Listing mods
+
+Name
+
+- @mods.each do |mod|
+  %div
+    = mod.name
+    = link_to 'Edit', edit_mod_path(mod)
+    = link_to 'Destroy', mod, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br
+
+= link_to 'New Mod', new_mod_path

@@ -1,0 +1,37 @@
+.hero-unit
+  %center
+    %h1.shadow WELCOME!!
+    To install the mods necessary for the Minecraft Server.
+  %ol
+    %li
+      Grab and install the
+      = link_to "Technic Launcher", "http://www.technicpack.net/download", :target => "_blank"
+    %li
+      Run the technic launcher and on the left click "Add Modpack" and paste this:
+      %u.technic http://www.technicpack.net/api/modpack/big-dig-pack
+      %button.btn.btn-mini.technicbutton Copy
+    %li Login and run the game at least once. Making sure to have Big Dig Pack selected as the mod. Quit minecraft once it loads up.
+    %li
+      Download the
+      = succeed "," do
+        %a{:href => "/mod_AdvancedSolarPanels_3_3_3.zip"} Advanced Solar Panels Mod
+      = succeed "," do
+        %a{:href => "/mod_zGraviSuite_1_7.zip"} Gravisuit Mod
+      = succeed "," do
+        %a{:href => "/StevesCarts2.0.0.a62.zip"} Steves Carts 2
+      and
+      %a{:href => "/Transformers v1.7b.zip"} Transformer Mod
+    %li
+      On your desktop press the combination of the "
+      %i> Windows Key
+      "+"
+      %i> R
+      " and paste this:
+      %u.path %appdata%\.technic\big-dig-pack\mods
+      %button.btn.btn-mini.pathbutton Copy
+    %li In the mods folder that just popped up, move the 2 mods you downloaded inside
+    %li
+      Start up Minecraft and add
+      %u.servername eternaledge.net
+      %button.btn.btn-mini.serverbutton Copy
+      to your serverlist and join us!

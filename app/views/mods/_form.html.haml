@@ -1,0 +1,5 @@
+= simple_form_for @mod do |f|
+  = f.input :name
+  = f.file_field :mod
+  %div
+    = f.submit "Add Mod", class: 'btn'
